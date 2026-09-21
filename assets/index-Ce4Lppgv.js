@@ -16,7 +16,7 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
         border-gray-100\r
         bg-white/95\r
         backdrop-blur\r
-      `,children:(0,L.jsxs)(`div`,{className:`sira-container`,children:[(0,L.jsxs)(`div`,{className:`flex h-20 items-center justify-between`,children:[(0,L.jsx)(j,{to:`/`,onClick:c,className:`flex items-center`,"aria-label":`SIRA Technologies Home`,children:(0,L.jsx)(`img`,{src:`/images/logo/siralogo.png`,alt:`SIRA Technologies`,className:`h-14 w-auto object-contain`})}),(0,L.jsx)(`nav`,{className:`\r
+      `,children:(0,L.jsxs)(`div`,{className:`sira-container`,children:[(0,L.jsxs)(`div`,{className:`flex h-20 items-center justify-between`,children:["```jsx",(0,L.jsx)(j,{to:`/`,onClick:c,className:`flex items-center`,"aria-label":`SIRA Technologies Home`,children:(0,L.jsx)(`img`,{src:`/sira-technologies/images/logo/siralogo.png`,alt:`SIRA Technologies`,className:`h-14 w-auto object-contain`})}),(0,L.jsx)(`nav`,{className:`\r
               hidden\r
               items-center\r
               gap-8\r
