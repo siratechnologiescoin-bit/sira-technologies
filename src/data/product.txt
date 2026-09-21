@@ -1,0 +1,923 @@
+import {
+  Camera,
+  Cctv,
+  Video,
+  CircleDot,
+  Eye,
+  Package,
+  HardDrive,
+  Fingerprint,
+  ShieldCheck,
+  CreditCard,
+  LockKeyhole,
+  DoorOpen,
+  Network,
+  Cable,
+  Wifi,
+  Server,
+  Monitor,
+  Shield,
+  Database,
+  Cpu,
+  PanelsTopLeft,
+  Sun,
+  Megaphone,
+  ScrollText,
+  MonitorPlay,
+  Presentation,
+  Layers,
+  Zap,
+  BatteryCharging,
+  ServerCog,
+  PlugZap,
+  CableIcon,
+} from "lucide-react";
+
+export const products = [
+  // =========================================================
+  // CCTV & SURVEILLANCE
+  // =========================================================
+
+  {
+    id: "cctv-001",
+    name: "4MP IP Camera",
+    category: "CCTV & Surveillance",
+    service: "CCTV & Surveillance",
+    description:
+      "4MP network camera suitable for indoor and outdoor security applications with high-quality night vision.",
+    icon: Camera,
+    keywords: [
+      "4mp",
+      "camera",
+      "ip camera",
+      "cctv",
+      "network camera",
+      "security camera",
+      "night vision",
+    ],
+    tags: ["4MP", "IP", "Outdoor", "Night Vision"],
+    badge: "Popular",
+  },
+
+  {
+    id: "cctv-002",
+    name: "Outdoor Bullet Camera",
+    category: "CCTV & Surveillance",
+    service: "CCTV & Surveillance",
+    description:
+      "Weather-resistant outdoor bullet camera designed for perimeter, building and parking-area surveillance.",
+    icon: Cctv,
+    keywords: [
+      "bullet camera",
+      "outdoor camera",
+      "cctv",
+      "security camera",
+      "weatherproof",
+      "night vision",
+      "perimeter security",
+    ],
+    tags: ["Outdoor", "Bullet", "Weatherproof"],
+  },
+
+  {
+    id: "cctv-003",
+    name: "PTZ Camera",
+    category: "CCTV & Surveillance",
+    service: "CCTV & Surveillance",
+    description:
+      "Pan-Tilt-Zoom surveillance camera for wide-area monitoring, remote control and optical zoom applications.",
+    icon: Video,
+    keywords: [
+      "ptz",
+      "ptz camera",
+      "zoom camera",
+      "speed dome",
+      "cctv",
+      "surveillance",
+    ],
+    tags: ["PTZ", "Zoom", "Outdoor"],
+    badge: "Professional",
+  },
+
+  {
+    id: "cctv-004",
+    name: "Dome Camera",
+    category: "CCTV & Surveillance",
+    service: "CCTV & Surveillance",
+    description:
+      "Compact dome camera suitable for offices, shops, homes, hospitals and indoor surveillance.",
+    icon: CircleDot,
+    keywords: [
+      "dome",
+      "dome camera",
+      "indoor camera",
+      "cctv",
+      "security",
+    ],
+    tags: ["Dome", "Indoor", "CCTV"],
+  },
+
+  {
+    id: "cctv-005",
+    name: "Night Vision Camera",
+    category: "CCTV & Surveillance",
+    service: "CCTV & Surveillance",
+    description:
+      "Infrared night-vision camera designed for reliable surveillance in low-light and dark environments.",
+    icon: Eye,
+    keywords: [
+      "night vision",
+      "ir camera",
+      "infrared camera",
+      "cctv",
+      "dark monitoring",
+    ],
+    tags: ["IR", "Night Vision", "CCTV"],
+  },
+
+  {
+    id: "cctv-006",
+    name: "IP Camera Kit",
+    category: "CCTV & Surveillance",
+    service: "CCTV & Surveillance",
+    description:
+      "Complete IP surveillance kit for homes, offices, shops and commercial installations.",
+    icon: Package,
+    keywords: [
+      "ip camera kit",
+      "cctv kit",
+      "security kit",
+      "surveillance kit",
+      "camera package",
+    ],
+    tags: ["IP", "Kit", "Surveillance"],
+  },
+
+  // =========================================================
+  // RECORDING & STORAGE
+  // =========================================================
+
+  {
+    id: "recording-001",
+    name: "8 Channel NVR",
+    category: "Recording & Storage",
+    service: "CCTV & Surveillance",
+    description:
+      "8-channel network video recorder for managing and recording IP surveillance cameras.",
+    icon: HardDrive,
+    keywords: [
+      "nvr",
+      "network video recorder",
+      "recorder",
+      "8 channel",
+      "ip camera recorder",
+      "cctv",
+    ],
+    tags: ["NVR", "8 Channel", "Recording"],
+  },
+
+  {
+    id: "recording-002",
+    name: "16 Channel NVR",
+    category: "Recording & Storage",
+    service: "CCTV & Surveillance",
+    description:
+      "16-channel NVR designed for medium and large IP camera surveillance deployments.",
+    icon: HardDrive,
+    keywords: [
+      "16 channel nvr",
+      "nvr",
+      "network video recorder",
+      "ip surveillance",
+    ],
+    tags: ["NVR", "16 Channel", "Recording"],
+  },
+
+  {
+    id: "recording-003",
+    name: "8 Channel DVR",
+    category: "Recording & Storage",
+    service: "CCTV & Surveillance",
+    description:
+      "Digital video recorder for analog and compatible CCTV camera systems.",
+    icon: Database,
+    keywords: [
+      "dvr",
+      "digital video recorder",
+      "recorder",
+      "8 channel",
+      "cctv",
+      "analog camera",
+    ],
+    tags: ["DVR", "8 Channel", "Recording"],
+  },
+
+  {
+    id: "recording-004",
+    name: "16 Channel DVR",
+    category: "Recording & Storage",
+    service: "CCTV & Surveillance",
+    description:
+      "16-channel digital video recorder for larger analog CCTV installations.",
+    icon: Database,
+    keywords: [
+      "16 channel dvr",
+      "dvr",
+      "cctv recorder",
+      "digital recorder",
+    ],
+    tags: ["DVR", "16 Channel", "Recording"],
+  },
+
+  {
+    id: "recording-005",
+    name: "Surveillance HDD",
+    category: "Recording & Storage",
+    service: "CCTV & Surveillance",
+    description:
+      "Surveillance-grade hard drive designed for continuous CCTV recording workloads.",
+    icon: HardDrive,
+    keywords: [
+      "hdd",
+      "hard disk",
+      "surveillance hdd",
+      "cctv storage",
+      "storage",
+      "dvr storage",
+      "nvr storage",
+    ],
+    tags: ["HDD", "Storage", "CCTV"],
+  },
+
+  // =========================================================
+  // ACCESS CONTROL & SECURITY
+  // =========================================================
+
+  {
+    id: "access-001",
+    name: "Biometric Attendance System",
+    category: "Access & Security",
+    service: "Access & Security",
+    description:
+      "Biometric attendance terminal for employee attendance and access management.",
+    icon: Fingerprint,
+    keywords: [
+      "biometric",
+      "attendance",
+      "fingerprint",
+      "employee attendance",
+      "access control",
+      "security",
+    ],
+    tags: ["Biometric", "Attendance", "Security"],
+  },
+
+  {
+    id: "access-002",
+    name: "Door Access Control",
+    category: "Access & Security",
+    service: "Access & Security",
+    description:
+      "Electronic door access control solution for offices and restricted areas.",
+    icon: ShieldCheck,
+    keywords: [
+      "access control",
+      "door access",
+      "rfid",
+      "security",
+      "office security",
+      "door lock",
+    ],
+    tags: ["Access Control", "RFID", "Security"],
+  },
+
+  {
+    id: "access-003",
+    name: "RFID Card Reader",
+    category: "Access & Security",
+    service: "Access & Security",
+    description:
+      "RFID card reader for controlled entry and employee identification systems.",
+    icon: CreditCard,
+    keywords: [
+      "rfid",
+      "rfid reader",
+      "card reader",
+      "access control",
+      "security",
+    ],
+    tags: ["RFID", "Card Reader", "Security"],
+  },
+
+  {
+    id: "access-004",
+    name: "Electric Door Lock",
+    category: "Access & Security",
+    service: "Access & Security",
+    description:
+      "Electronic locking solution for office doors, restricted areas and access-control installations.",
+    icon: LockKeyhole,
+    keywords: [
+      "electric lock",
+      "door lock",
+      "electronic lock",
+      "access control",
+      "security lock",
+    ],
+    tags: ["Door Lock", "Access Control", "Security"],
+  },
+
+  {
+    id: "access-005",
+    name: "Video Door Phone",
+    category: "Access & Security",
+    service: "Access & Security",
+    description:
+      "Video door communication system providing visitor identification and controlled entry.",
+    icon: DoorOpen,
+    keywords: [
+      "video door phone",
+      "door phone",
+      "video intercom",
+      "intercom",
+      "security",
+    ],
+    tags: ["Video", "Intercom", "Security"],
+  },
+
+  // =========================================================
+  // NETWORKING
+  // =========================================================
+
+  {
+    id: "network-001",
+    name: "8 Port PoE Switch",
+    category: "Networking",
+    service: "Networking",
+    description:
+      "8-port Power over Ethernet switch for IP cameras and network devices.",
+    icon: Network,
+    keywords: [
+      "poe switch",
+      "8 port switch",
+      "network switch",
+      "ip camera switch",
+      "cctv switch",
+      "ethernet",
+      "networking",
+    ],
+    tags: ["PoE", "8 Port", "Networking", "CCTV"],
+    badge: "CCTV",
+  },
+
+  {
+    id: "network-002",
+    name: "24 Port Gigabit Switch",
+    category: "Networking",
+    service: "Networking",
+    description:
+      "24-port Gigabit Ethernet switch for office and enterprise networking environments.",
+    icon: Network,
+    keywords: [
+      "24 port",
+      "gigabit switch",
+      "network switch",
+      "ethernet switch",
+      "lan",
+      "networking",
+      "office network",
+    ],
+    tags: ["24 Port", "Gigabit", "LAN"],
+  },
+
+  {
+    id: "network-003",
+    name: "Wi-Fi Access Point",
+    category: "Networking",
+    service: "Networking",
+    description:
+      "Wireless access point for reliable Wi-Fi connectivity across homes, offices and commercial environments.",
+    icon: Wifi,
+    keywords: [
+      "wifi",
+      "wi-fi",
+      "wireless",
+      "access point",
+      "wireless network",
+      "networking",
+    ],
+    tags: ["WiFi", "Wireless", "Access Point"],
+  },
+
+  {
+    id: "network-004",
+    name: "Cat6 LAN Cable",
+    category: "Networking",
+    service: "Networking",
+    description:
+      "Cat6 Ethernet cable for high-speed wired networking and CCTV installations.",
+    icon: Cable,
+    keywords: [
+      "cat6",
+      "lan cable",
+      "ethernet cable",
+      "network cable",
+      "cctv cable",
+      "networking",
+    ],
+    tags: ["Cat6", "LAN", "Ethernet"],
+  },
+
+  {
+    id: "network-005",
+    name: "Network Rack",
+    category: "Networking",
+    service: "Networking",
+    description:
+      "Professional network rack cabinet for organizing switches, patch panels, routers and network equipment.",
+    icon: ServerCog,
+    keywords: [
+      "network rack",
+      "server rack",
+      "rack cabinet",
+      "network cabinet",
+      "server room",
+    ],
+    tags: ["Rack", "Networking", "Server Room"],
+  },
+
+  {
+    id: "network-006",
+    name: "Patch Panel",
+    category: "Networking",
+    service: "Networking",
+    description:
+      "Structured cabling patch panel for organized and manageable network installations.",
+    icon: CableIcon,
+    keywords: [
+      "patch panel",
+      "network patch panel",
+      "cat6",
+      "structured cabling",
+      "lan",
+    ],
+    tags: ["Patch Panel", "Cat6", "LAN"],
+  },
+
+  // =========================================================
+  // LINUX PRODUCTS / SYSTEMS
+  // =========================================================
+
+  {
+    id: "linux-001",
+    name: "Linux Server",
+    category: "Linux Solutions",
+    service: "Linux Services",
+    description:
+      "Enterprise Linux server platform for hosting applications, databases, web services and internal infrastructure.",
+    icon: Server,
+    keywords: [
+      "linux",
+      "linux server",
+      "rhel",
+      "ubuntu",
+      "centos",
+      "server",
+      "web server",
+      "application server",
+    ],
+    tags: ["Linux", "Server", "Enterprise"],
+    badge: "Server",
+  },
+
+  {
+    id: "linux-002",
+    name: "Linux Workstation",
+    category: "Linux Solutions",
+    service: "Linux Services",
+    description:
+      "Linux workstation suitable for development, administration, engineering and technical workloads.",
+    icon: Monitor,
+    keywords: [
+      "linux workstation",
+      "linux pc",
+      "ubuntu workstation",
+      "developer workstation",
+      "linux desktop",
+    ],
+    tags: ["Linux", "Workstation", "Development"],
+  },
+
+  {
+    id: "linux-003",
+    name: "Linux Firewall Appliance",
+    category: "Linux Solutions",
+    service: "Linux Services",
+    description:
+      "Linux-based firewall appliance for network security, routing, VPN and traffic management.",
+    icon: Shield,
+    keywords: [
+      "linux firewall",
+      "firewall appliance",
+      "vpn",
+      "network security",
+      "router",
+      "linux security",
+    ],
+    tags: ["Linux", "Firewall", "VPN"],
+  },
+
+  // =========================================================
+  // WINDOWS PRODUCTS
+  // =========================================================
+
+  {
+    id: "windows-001",
+    name: "Windows Server",
+    category: "Windows Solutions",
+    service: "Windows Services",
+    description:
+      "Windows Server platform for Active Directory, file services, application hosting and enterprise infrastructure.",
+    icon: Server,
+    keywords: [
+      "windows server",
+      "microsoft server",
+      "active directory",
+      "domain controller",
+      "file server",
+      "windows",
+    ],
+    tags: ["Windows", "Server", "Active Directory"],
+    badge: "Enterprise",
+  },
+
+  {
+    id: "windows-002",
+    name: "Windows Workstation",
+    category: "Windows Solutions",
+    service: "Windows Services",
+    description:
+      "Business-class Windows workstation for office productivity, administration and professional applications.",
+    icon: Monitor,
+    keywords: [
+      "windows pc",
+      "windows workstation",
+      "desktop computer",
+      "business pc",
+      "office computer",
+    ],
+    tags: ["Windows", "Desktop", "Business"],
+  },
+
+  {
+    id: "windows-003",
+    name: "Windows Domain Controller",
+    category: "Windows Solutions",
+    service: "Windows Services",
+    description:
+      "Active Directory domain infrastructure for centralized authentication, users, computers and policies.",
+    icon: ShieldCheck,
+    keywords: [
+      "active directory",
+      "domain controller",
+      "windows domain",
+      "group policy",
+      "active directory server",
+    ],
+    tags: ["AD", "Domain", "Group Policy"],
+  },
+
+  // =========================================================
+  // SERVER & STORAGE
+  // =========================================================
+
+  {
+    id: "server-001",
+    name: "Tower Server",
+    category: "Servers & Storage",
+    service: "Linux Services",
+    description:
+      "Tower server platform for small and medium business applications, file services and virtualization.",
+    icon: Server,
+    keywords: [
+      "tower server",
+      "server",
+      "business server",
+      "file server",
+      "application server",
+    ],
+    tags: ["Server", "Tower", "Business"],
+  },
+
+  {
+    id: "server-002",
+    name: "Rack Server",
+    category: "Servers & Storage",
+    service: "Linux Services",
+    description:
+      "Rack-mounted enterprise server for data centers, virtualization, applications and infrastructure workloads.",
+    icon: ServerCog,
+    keywords: [
+      "rack server",
+      "enterprise server",
+      "data center",
+      "server",
+      "virtualization",
+    ],
+    tags: ["Rack Server", "Enterprise", "Data Center"],
+  },
+
+  {
+    id: "server-003",
+    name: "NAS Storage",
+    category: "Servers & Storage",
+    service: "Linux Services",
+    description:
+      "Network Attached Storage system for centralized file storage, backup and shared business data.",
+    icon: Database,
+    keywords: [
+      "nas",
+      "nas storage",
+      "network storage",
+      "file storage",
+      "backup storage",
+      "shared storage",
+    ],
+    tags: ["NAS", "Storage", "Backup"],
+  },
+
+  {
+    id: "server-004",
+    name: "Server SSD",
+    category: "Servers & Storage",
+    service: "Linux Services",
+    description:
+      "High-performance SSD storage designed for servers, virtualization and demanding workloads.",
+    icon: Cpu,
+    keywords: [
+      "server ssd",
+      "ssd",
+      "enterprise ssd",
+      "server storage",
+      "data center storage",
+    ],
+    tags: ["SSD", "Server", "Storage"],
+  },
+
+  // =========================================================
+  // LED WALLS
+  // =========================================================
+
+  {
+    id: "led-001",
+    name: "Indoor LED Wall",
+    category: "LED Display Solutions",
+    service: "LED Display Solutions",
+    description:
+      "High-resolution indoor LED display solution for conference rooms, auditoriums, corporate spaces, retail environments and events.",
+    icon: PanelsTopLeft,
+    keywords: [
+      "indoor led",
+      "indoor led wall",
+      "led display",
+      "led screen",
+      "led video wall",
+      "conference led",
+      "indoor display",
+    ],
+    tags: ["Indoor", "LED Wall", "Display"],
+    badge: "Indoor",
+  },
+
+  {
+    id: "led-002",
+    name: "Outdoor LED Wall",
+    category: "LED Display Solutions",
+    service: "LED Display Solutions",
+    description:
+      "High-brightness outdoor LED display suitable for advertising, public information, events, stadiums and building installations.",
+    icon: Sun,
+    keywords: [
+      "outdoor led",
+      "outdoor led wall",
+      "led billboard",
+      "led display",
+      "digital billboard",
+      "outdoor screen",
+      "advertising display",
+    ],
+    tags: ["Outdoor", "LED Wall", "High Brightness"],
+    badge: "Outdoor",
+  },
+
+  {
+    id: "led-003",
+    name: "LED Video Wall",
+    category: "LED Display Solutions",
+    service: "LED Display Solutions",
+    description:
+      "Modular LED video wall system for large-format visual communication, presentations, events and control rooms.",
+    icon: Layers,
+    keywords: [
+      "led video wall",
+      "video wall",
+      "large led display",
+      "control room",
+      "event led",
+    ],
+    tags: ["Video Wall", "LED", "Large Format"],
+  },
+
+  {
+    id: "led-004",
+    name: "LED Advertising Display",
+    category: "LED Display Solutions",
+    service: "LED Display Solutions",
+    description:
+      "Digital LED advertising display for commercial promotions, retail advertising and outdoor communication.",
+    icon: Megaphone,
+    keywords: [
+      "led advertising",
+      "digital advertising",
+      "led billboard",
+      "advertising screen",
+      "digital signage",
+    ],
+    tags: ["Advertising", "LED", "Digital Signage"],
+  },
+
+  {
+    id: "led-005",
+    name: "LED Scrolling Display",
+    category: "LED Display Solutions",
+    service: "LED Display Solutions",
+    description:
+      "Programmable LED scrolling display for announcements, notices, information and promotional messages.",
+    icon: ScrollText,
+    keywords: [
+      "led scrolling",
+      "led display board",
+      "digital display board",
+      "notice board",
+      "message display",
+    ],
+    tags: ["Scrolling", "LED", "Information"],
+  },
+
+  // =========================================================
+  // DIGITAL SIGNAGE & AV
+  // =========================================================
+
+  {
+    id: "display-001",
+    name: "Digital Signage Display",
+    category: "Digital Signage & AV",
+    service: "LED Display Solutions",
+    description:
+      "Commercial digital signage display for menus, advertisements, announcements and information screens.",
+    icon: MonitorPlay,
+    keywords: [
+      "digital signage",
+      "digital display",
+      "commercial display",
+      "advertising display",
+      "information display",
+    ],
+    tags: ["Digital Signage", "Display", "Commercial"],
+  },
+
+  {
+    id: "display-002",
+    name: "Interactive Display",
+    category: "Digital Signage & AV",
+    service: "LED Display Solutions",
+    description:
+      "Interactive large-format display for classrooms, meeting rooms, presentations and collaborative environments.",
+    icon: Presentation,
+    keywords: [
+      "interactive display",
+      "interactive panel",
+      "smart board",
+      "meeting display",
+      "classroom display",
+    ],
+    tags: ["Interactive", "Display", "Meeting"],
+  },
+
+  {
+    id: "display-003",
+    name: "Video Wall Controller",
+    category: "Digital Signage & AV",
+    service: "LED Display Solutions",
+    description:
+      "Video wall controller for managing multiple displays and visual sources in professional AV environments.",
+    icon: Layers,
+    keywords: [
+      "video wall controller",
+      "display controller",
+      "video wall processor",
+      "av controller",
+      "display management",
+    ],
+    tags: ["Video Wall", "Controller", "AV"],
+  },
+
+  // =========================================================
+  // UPS & POWER
+  // =========================================================
+
+  {
+    id: "power-001",
+    name: "Online UPS",
+    category: "Power & UPS",
+    service: "IT Support",
+    description:
+      "Online UPS system providing continuous power protection for servers, networking equipment and critical IT infrastructure.",
+    icon: Zap,
+    keywords: [
+      "ups",
+      "online ups",
+      "server ups",
+      "power backup",
+      "it power",
+      "data center ups",
+    ],
+    tags: ["UPS", "Power Backup", "IT"],
+  },
+
+  {
+    id: "power-002",
+    name: "Rack Mount UPS",
+    category: "Power & UPS",
+    service: "IT Support",
+    description:
+      "Rack-mounted UPS designed to protect network, server and data-center equipment from power interruptions.",
+    icon: BatteryCharging,
+    keywords: [
+      "rack ups",
+      "rack mount ups",
+      "server ups",
+      "network ups",
+      "data center",
+    ],
+    tags: ["Rack UPS", "Server", "Power"],
+  },
+
+  // =========================================================
+  // RACK & SERVER ROOM ACCESSORIES
+  // =========================================================
+
+  {
+    id: "rack-001",
+    name: "Server Rack Cabinet",
+    category: "Server Room Accessories",
+    service: "Networking",
+    description:
+      "Professional server rack cabinet for organizing servers, switches, patch panels and network equipment.",
+    icon: ServerCog,
+    keywords: [
+      "server rack",
+      "rack cabinet",
+      "network rack",
+      "data center rack",
+      "server room",
+    ],
+    tags: ["Server Rack", "Cabinet", "Data Center"],
+  },
+
+  {
+    id: "rack-002",
+    name: "Rack PDU",
+    category: "Server Room Accessories",
+    service: "Networking",
+    description:
+      "Rack power distribution unit for distributing electrical power to server and networking equipment.",
+    icon: PlugZap,
+    keywords: [
+      "pdu",
+      "rack pdu",
+      "power distribution",
+      "server rack",
+      "data center power",
+    ],
+    tags: ["PDU", "Rack", "Power"],
+  },
+
+  {
+    id: "rack-003",
+    name: "Cable Management Panel",
+    category: "Server Room Accessories",
+    service: "Networking",
+    description:
+      "Cable management accessory for maintaining organized and serviceable network and server racks.",
+    icon: Cable,
+    keywords: [
+      "cable management",
+      "rack cable management",
+      "network cables",
+      "server rack",
+      "cable organizer",
+    ],
+    tags: ["Cable Management", "Rack", "Networking"],
+  },
+];

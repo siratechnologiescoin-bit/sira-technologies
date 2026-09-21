@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  color: #111111;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #d4af37;
+  color: #080808;
+}
+
+@layer components {
+  .sira-container {
+    @apply mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8;
+  }
+
+  .sira-section {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+
+  .sira-label {
+    @apply mb-3 inline-block text-sm font-bold uppercase tracking-[0.2em] text-sira-red;
+  }
+
+  .sira-title {
+    @apply text-3xl font-bold leading-tight text-sira-dark sm:text-4xl lg:text-5xl;
+  }
+
+  .sira-description {
+    @apply mt-5 max-w-2xl text-base leading-7 text-sira-gray md:text-lg;
+  }
+
+  .sira-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-6 py-3 text-sm font-bold transition-all duration-300;
+  }
+
+  .sira-btn-primary {
+    @apply sira-btn bg-sira-red text-white hover:bg-sira-red-dark;
+  }
+
+  .sira-btn-gold {
+    @apply sira-btn bg-sira-gold text-sira-black hover:bg-sira-gold-light;
+  }
+
+  .sira-btn-outline {
+    @apply sira-btn border border-sira-gold bg-transparent text-sira-dark hover:bg-sira-gold hover:text-sira-black;
+  }
+
+  .sira-card {
+    @apply rounded-sira border border-gray-100 bg-white shadow-sira transition-all duration-300 hover:-translate-y-1 hover:shadow-sira-lg;
+  }
+}
