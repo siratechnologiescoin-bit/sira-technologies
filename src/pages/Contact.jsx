@@ -1,4 +1,3 @@
-
 import Container from "../components/common/Container";
 import ContactCTA from "../components/home/ContactCTA";
 
@@ -31,17 +30,17 @@ const About = () => {
           ABOUT HERO
       ====================================================== */}
 
-      <section className="bg-sira-black py-20">
+      <section className="bg-sira-black py-16 sm:py-20">
         <Container>
           <span className="sira-label text-sira-gold">
             About Us
           </span>
 
-          <h1 className="text-4xl font-black text-white sm:text-5xl">
+          <h1 className="mt-2 text-4xl font-black text-white sm:text-5xl">
             {COMPANY_NAME}
           </h1>
 
-          <p className="mt-5 max-w-2xl text-gray-400">
+          <p className="mt-4 max-w-2xl text-gray-400">
             Technology infrastructure, security,
             cloud and IT solutions.
           </p>
@@ -54,22 +53,23 @@ const About = () => {
 
       <section className="sira-section bg-white">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-2">
+          <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
+
             {/* LEFT */}
 
             <div>
-              <span className="sira-label">
+              <span className="sira-label text-sira-gold">
                 Who We Are
               </span>
 
-              <h2 className="sira-title">
+              <h2 className="sira-title mt-2">
                 Technology That Supports Business
               </h2>
             </div>
 
             {/* RIGHT */}
 
-            <div className="space-y-5 text-base leading-8 text-sira-gray">
+            <div className="space-y-4 text-base leading-7 text-sira-gray">
               <p>
                 {COMPANY_NAME} provides technology
                 infrastructure and IT services for
@@ -96,11 +96,28 @@ const About = () => {
               CONTACT INFORMATION
           ================================================== */}
 
-          <div className="mt-14 grid gap-6 sm:grid-cols-2">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2">
+
             {/* CONTACT PERSON */}
 
-            <div className="sira-card p-6">
-              <p className="text-sm font-bold uppercase tracking-[0.15em] text-sira-red">
+            <div
+              className="
+                sira-card
+                border
+                border-gray-100
+                bg-white
+                p-6
+              "
+            >
+              <p
+                className="
+                  text-xs
+                  font-bold
+                  uppercase
+                  tracking-[0.15em]
+                  text-sira-gold
+                "
+              >
                 Contact Person
               </p>
 
@@ -117,9 +134,26 @@ const About = () => {
 
             <a
               href={`tel:${phoneHref}`}
-              className="sira-card p-6"
+              className="
+                sira-card
+                border
+                border-gray-100
+                bg-white
+                p-6
+                transition-all
+                duration-200
+                hover:border-sira-gold
+              "
             >
-              <p className="text-sm font-bold uppercase tracking-[0.15em] text-sira-red">
+              <p
+                className="
+                  text-xs
+                  font-bold
+                  uppercase
+                  tracking-[0.15em]
+                  text-sira-gold
+                "
+              >
                 Call Us
               </p>
 
@@ -136,13 +170,39 @@ const About = () => {
 
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="sira-card p-6 sm:col-span-2"
+              className="
+                sira-card
+                border
+                border-gray-100
+                bg-white
+                p-6
+                transition-all
+                duration-200
+                hover:border-sira-gold
+                sm:col-span-2
+              "
             >
-              <p className="text-sm font-bold uppercase tracking-[0.15em] text-sira-red">
+              <p
+                className="
+                  text-xs
+                  font-bold
+                  uppercase
+                  tracking-[0.15em]
+                  text-sira-gold
+                "
+              >
                 Email Us
               </p>
 
-              <p className="mt-3 break-all text-xl font-bold text-sira-dark">
+              <p
+                className="
+                  mt-3
+                  break-all
+                  text-xl
+                  font-bold
+                  text-sira-dark
+                "
+              >
                 {CONTACT_EMAIL}
               </p>
 

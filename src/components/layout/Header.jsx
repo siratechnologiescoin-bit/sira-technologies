@@ -1,11 +1,6 @@
-
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import {
-  Menu,
-  X,
-  ChevronDown,
-} from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 import { navigation } from "../../data/navigation";
 
@@ -22,23 +17,37 @@ const Header = () => {
   const isActive = (path) => {
     if (!path) return false;
 
+    const currentPath =
+      location.pathname.replace(/\/+$/, "") || "/";
+
+    const targetPath =
+      path.replace(/\/+$/, "") || "/";
+
     // Home
-    if (path === "/") {
-      return location.pathname === "/";
+    if (targetPath === "/") {
+      return currentPath === "/";
     }
 
-    return location.pathname === path;
+    // Exact route or nested route
+    return (
+      currentPath === targetPath ||
+      currentPath.startsWith(`${targetPath}/`)
+    );
   };
 
   // =========================================================
-  // CHECK IF A SERVICE PAGE IS ACTIVE
+  // CHECK IF ANY SERVICE PAGE IS ACTIVE
   // =========================================================
+  const servicesItem = navigation.find(
+    (item) =>
+      item.name?.toLowerCase() === "services" ||
+      item.children
+  );
+
   const isServiceActive =
-    navigation
-      .find((item) => item.name === "Services")
-      ?.children?.some((child) =>
-        isActive(child.path)
-      ) || false;
+    servicesItem?.children?.some((child) =>
+      isActive(child.path)
+    ) || false;
 
   // =========================================================
   // CLOSE MENUS
@@ -85,16 +94,10 @@ const Header = () => {
       }
     };
 
-    window.addEventListener(
-      "resize",
-      handleResize
-    );
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener(
-        "resize",
-        handleResize
-      );
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -125,9 +128,9 @@ const Header = () => {
         ====================================================== */}
         <div className="flex h-20 items-center justify-between">
 
-          {/* =====================================================
+          {/* ===================================================
               LOGO
-          ====================================================== */}
+          ==================================================== */}
           <Link
             to="/"
             onClick={closeMenus}
@@ -135,15 +138,15 @@ const Header = () => {
             aria-label="SIRA Technologies Home"
           >
             <img
-              src="/images/logo/siralogo.png"
+              src={`${import.meta.env.BASE_URL}images/logo/siralogo.png`}
               alt="SIRA Technologies"
               className="h-14 w-auto object-contain"
             />
           </Link>
 
-          {/* =====================================================
+          {/* ===================================================
               DESKTOP NAVIGATION
-          ====================================================== */}
+          ==================================================== */}
           <nav
             className="
               hidden
@@ -165,13 +168,12 @@ const Header = () => {
                     ref={servicesRef}
                     className="relative"
                   >
+
                     {/* Services Button */}
                     <button
                       type="button"
                       onClick={() =>
-                        setServicesOpen(
-                          (prev) => !prev
-                        )
+                        setServicesOpen((prev) => !prev)
                       }
                       className={`
                         flex
@@ -210,14 +212,14 @@ const Header = () => {
                     </button>
 
                     {/* =================================================
-                        SERVICES DROPDOWN
+                        DESKTOP SERVICES DROPDOWN
                     ================================================== */}
                     <div
                       className={`
                         absolute
                         left-1/2
                         top-full
-                        w-64
+                        w-72
                         -translate-x-1/2
                         pt-3
                         transition-all
@@ -240,50 +242,42 @@ const Header = () => {
                           shadow-sira-lg
                         "
                       >
-                        {/* Gold line */}
+
+                        {/* Gold Line */}
                         <div className="mb-1 h-0.5 w-full bg-sira-gold" />
 
-                        {item.children.map(
-                          (child) => {
-                            const active =
-                              isActive(
-                                child.path
-                              );
+                        {item.children.map((child) => {
+                          const active = isActive(child.path);
 
-                            return (
-                              <Link
-                                key={child.path}
-                                to={child.path}
-                                onClick={() =>
-                                  setServicesOpen(
-                                    false
-                                  )
+                          return (
+                            <Link
+                              key={child.path}
+                              to={child.path}
+                              onClick={closeMenus}
+                              className={`
+                                mb-1
+                                block
+                                rounded-md
+                                px-4
+                                py-3
+                                text-sm
+                                font-medium
+                                transition-all
+                                duration-200
+                                focus:outline-none
+                                focus:ring-2
+                                focus:ring-sira-red/20
+                                ${
+                                  active
+                                    ? "bg-sira-red text-white"
+                                    : "text-gray-700 hover:bg-sira-light hover:text-sira-red"
                                 }
-                                className={`
-                                  mb-1
-                                  block
-                                  rounded-md
-                                  px-4
-                                  py-3
-                                  text-sm
-                                  font-medium
-                                  transition-all
-                                  duration-200
-                                  focus:outline-none
-                                  focus:ring-2
-                                  focus:ring-sira-red/20
-                                  ${
-                                    active
-                                      ? "bg-sira-red text-white"
-                                      : "text-gray-700 hover:bg-sira-light hover:text-sira-red"
-                                  }
-                                `}
-                              >
-                                {child.name}
-                              </Link>
-                            );
-                          }
-                        )}
+                              `}
+                            >
+                              {child.name}
+                            </Link>
+                          );
+                        })}
                       </div>
                     </div>
                   </div>
@@ -291,12 +285,10 @@ const Header = () => {
               }
 
               /* =================================================
-                 NORMAL NAVIGATION ITEM
+                 NORMAL DESKTOP NAVIGATION
               ================================================== */
 
-              const active = isActive(
-                item.path
-              );
+              const active = isActive(item.path);
 
               return (
                 <Link
@@ -341,7 +333,7 @@ const Header = () => {
               focus:ring-sira-red/30
               lg:block
               ${
-                location.pathname === "/quote"
+                isActive("/quote")
                   ? "bg-sira-black text-sira-gold"
                   : "bg-sira-red text-white hover:bg-sira-red-dark"
               }
@@ -404,9 +396,9 @@ const Header = () => {
           >
             {navigation.map((item) => {
 
-              /* =================================================
+              /* ===============================================
                  MOBILE SERVICES
-              ================================================== */
+              ================================================ */
               if (item.children) {
                 return (
                   <div key={item.name}>
@@ -414,9 +406,7 @@ const Header = () => {
                     <button
                       type="button"
                       onClick={() =>
-                        setServicesOpen(
-                          (prev) => !prev
-                        )
+                        setServicesOpen((prev) => !prev)
                       }
                       className={`
                         flex
@@ -452,7 +442,7 @@ const Header = () => {
                       />
                     </button>
 
-                    {/* Mobile Services */}
+                    {/* Mobile Services List */}
                     {servicesOpen && (
                       <div
                         className="
@@ -462,52 +452,45 @@ const Header = () => {
                           pl-4
                         "
                       >
-                        {item.children.map(
-                          (child) => {
-                            const active =
-                              isActive(
-                                child.path
-                              );
+                        {item.children.map((child) => {
+                          const active = isActive(child.path);
 
-                            return (
-                              <Link
-                                key={child.path}
-                                to={child.path}
-                                onClick={closeMenus}
-                                className={`
-                                  mb-1
-                                  block
-                                  rounded-md
-                                  px-3
-                                  py-2
-                                  text-sm
-                                  transition-all
-                                  duration-200
-                                  ${
-                                    active
-                                      ? "bg-sira-red font-semibold text-white"
-                                      : "text-gray-600 hover:bg-sira-light hover:text-sira-red"
-                                  }
-                                `}
-                              >
-                                {child.name}
-                              </Link>
-                            );
-                          }
-                        )}
+                          return (
+                            <Link
+                              key={child.path}
+                              to={child.path}
+                              onClick={closeMenus}
+                              className={`
+                                mb-1
+                                block
+                                rounded-md
+                                px-3
+                                py-2
+                                text-sm
+                                transition-all
+                                duration-200
+                                ${
+                                  active
+                                    ? "bg-sira-red font-semibold text-white"
+                                    : "text-gray-600 hover:bg-sira-light hover:text-sira-red"
+                                }
+                              `}
+                            >
+                              {child.name}
+                            </Link>
+                          );
+                        })}
                       </div>
                     )}
                   </div>
                 );
               }
 
-              /* =================================================
-                 MOBILE NORMAL ITEM
-              ================================================== */
+              /* ===============================================
+                 MOBILE NORMAL NAVIGATION
+              ================================================ */
 
-              const active = isActive(
-                item.path
-              );
+              const active = isActive(item.path);
 
               return (
                 <Link
@@ -551,7 +534,7 @@ const Header = () => {
                 transition-all
                 duration-200
                 ${
-                  location.pathname === "/quote"
+                  isActive("/quote")
                     ? "bg-sira-black text-sira-gold"
                     : "bg-sira-red text-white hover:bg-sira-red-dark"
                 }
@@ -567,5 +550,3 @@ const Header = () => {
 };
 
 export default Header;
-
-
